@@ -5,7 +5,7 @@ This is an attempt to recreate my simple weather widget using
 
 ## Rescript, hmm ....
 
-> "So what is it?"
+> "So, what is it?"
 
 [Rescript](https://rescript-lang.org)
 is a strongly-typed functional programming language based on
@@ -13,13 +13,13 @@ is a strongly-typed functional programming language based on
 which in turn is based on the type system of
 [OCaml](https://ocaml.org/manual/coreexamples.html).
 
-> "So what is it?"
+> "So, what is it?"
 
 Rescript is a language targeted at front-end JavaScript developers: it not only
 offers a syntax familiar to JavaScript developers (including JSX), it actually
 outputs _optimized_ JavaScript.
 
-> "So what is it?"
+> "So, what is it?"
 
 Look, just read the
 [Rescript blog](https://rescript-lang.org/blog/bucklescript-is-rebranding)
