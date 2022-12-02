@@ -17,7 +17,7 @@ which in turn is based on the type system of
 
 > "So what is it?"
 
-Rescript is a language targeted at front-end JavaScript developers: it not only
+ReScript is a language targeted at front-end JavaScript developers: it not only
 offers a syntax familiar to JavaScript developers (including JSX), it actually
 outputs _optimized_ JavaScript.
 
