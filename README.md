@@ -35,6 +35,7 @@ Yarn 2 PnP (a.k.a. zero-installs) is not supported by ReScript yet, so you'll ne
 
 ## Build
 
-- `yarn start` - run in dev mode
+- `yarn start` - run in dev mode (at http://localhost:1234)
 - `yarn build` - build it
+- `yarn dlx serve dist` - serve the bundle (at http://localhost:3000)
 - `yarn clean` - clean it

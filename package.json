@@ -3,8 +3,8 @@
   "version": "0.0.1",
   "source": "src/index.html",
   "scripts": {
-    "start": "concurrently \"parcel\" \"rescript build -w\"",
-    "build": "parcel build",
+    "start": "concurrently \"parcel\" \"rescript -w\"",
+    "build": "rescript && parcel build",
     "clean": "rescript clean -with-deps"
   },
   "keywords": [
