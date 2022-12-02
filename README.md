@@ -1,28 +1,30 @@
-# Weather Widget v2
+# Weather Widget ... ReScripted!
 
-This is an attempt to recreate my simple weather widget using
-[rescript's React bindings](https://rescript-lang.org/docs/react/latest/introduction).
+This is an attempt to recreate my simple
+[weather widget](https://github.com/chriswilty/weather-widget)
+using
+[ReScript's React bindings](https://rescript-lang.org/docs/react/latest/introduction).
 
-## Rescript, hmm ....
+## ReScript, hmm ....
 
-> "So, what is it?"
+!["Red Dwarf Cat: So what is it?"](src/assets/images/so-what-is-it.jpg)
 
-[Rescript](https://rescript-lang.org)
+[ReScript](https://rescript-lang.org)
 is a strongly-typed functional programming language based on
-[Reason](https://reasonml.github.io/docs/en/what-and-why),
+[ReasonML](https://reasonml.github.io/docs/en/what-and-why),
 which in turn is based on the type system of
 [OCaml](https://ocaml.org/manual/coreexamples.html).
 
-> "So, what is it?"
+> "So what is it?"
 
 Rescript is a language targeted at front-end JavaScript developers: it not only
 offers a syntax familiar to JavaScript developers (including JSX), it actually
 outputs _optimized_ JavaScript.
 
-> "So, what is it?"
+> "So what is it?"
 
 Look, just read the
-[Rescript blog](https://rescript-lang.org/blog/bucklescript-is-rebranding)
+[ReScript blog](https://rescript-lang.org/blog/bucklescript-is-rebranding)
 for a full explanation.
 
 ## Installation

@@ -10,17 +10,17 @@
   "keywords": [
     "rescript"
   ],
-  "author": "",
-  "license": "MIT",
+  "author": "Chris Wilton-Magras",
+  "license": "Unlicense",
   "dependencies": {
     "@rescript/react": "^0.10.3",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2"
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   },
   "devDependencies": {
-    "concurrently": "^6.4.0",
-    "parcel": "^2.0.1",
-    "rescript": "^9.1.4"
+    "concurrently": "^7.6.0",
+    "parcel": "^2.8.0",
+    "rescript": "^10.0.1"
   },
-  "packageManager": "yarn@3.0.2"
+  "packageManager": "yarn@3.3.0"
 }
