@@ -2,6 +2,7 @@
 /node_modules/
 /lib/
 .bsb.lock
+*.bs.js
 .merlin
 
 # NOT in PnP / Zero-Installs mode, as not supported by ReScript yet!
