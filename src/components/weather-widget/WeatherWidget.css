@@ -1,10 +1,10 @@
 .weather-widget {
 	display: flex;
 	justify-content: center;
-	align-items: center;
-	border: 2px solid #666666;
-	border-radius: 6px;
-	padding: 12px 18px;
+	align-items: stretch;
+	border: 0.125rem solid #666666;
+	border-radius: 0.5rem;
+	padding: 0.75rem 1rem;
 	width: 16rem;
 	height: 20rem;
 	background-color: #282c34;

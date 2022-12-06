@@ -4,7 +4,32 @@
 module Location = {
   @react.component
   let make = (~name: string) => {
-    <div title="location"> {React.string(name)} </div>
+    <div title="location" className="location"> {React.string(name)} </div>
+  }
+}
+
+module Temperature = {
+  @react.component
+  let make = (~temperature: WeatherTypes.temperature) => {
+    let {minimum, current, maximum} = temperature
+    let degrees = "\u00B0c"
+
+    <div title="temperature" role="region" className="temperature">
+      <div title={"minimum " ++ degrees} className="min"> {React.string(minimum)} </div>
+      <div title="current" className="current"> {React.string(current ++ degrees)} </div>
+      <div title={"maximum " ++ degrees} className="max"> {React.string(maximum)} </div>
+    </div>
+  }
+}
+
+module WeatherIcon = {
+  @react.component
+  let make = (~icon: WeatherTypes.weather_icon) => {
+    let {code, description} = icon
+
+    <div className="icon">
+      <i title={description} className={"owf owf-5x owf-" ++ code} />
+    </div>
   }
 }
 
@@ -17,7 +42,7 @@ module Wind = {
     let windIconDescription = "direction: " ++ normalisedDirection
 
     <div className="wind">
-      <i className="icon" style={windIconStyle} title={windIconDescription} />
+      <i title={windIconDescription} style={windIconStyle} className="icon" />
       <div className="speed">
         {React.string(speed)}
         <span className="units"> {React.string(" m/s")} </span>
@@ -28,10 +53,12 @@ module Wind = {
 
 @react.component
 let make = (~locations: array<WeatherTypes.weather>, ~currentIndex: int) => {
-  let {location, wind} = locations[currentIndex]
+  let {icon, location, temperature, wind} = locations[currentIndex]
 
   <div className="weather-panel">
     <Location name={location} />
     <Wind wind />
+    <WeatherIcon icon />
+    <Temperature temperature />
   </div>
 }
