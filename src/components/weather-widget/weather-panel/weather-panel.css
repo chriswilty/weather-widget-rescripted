@@ -1,0 +1,29 @@
+.weather-panel {
+
+}
+
+.weather-panel .location {
+	font-size: 2rem;
+}
+
+.weather-panel .wind {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.weather-panel .wind .icon {
+	display: inline-block;
+	width: 1.5rem;
+	height: 1.5rem;
+	background-image: url("../../../assets/images/compass_white.png");
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 100%;
+}
+.weather-panel .wind .speed {
+	margin-left: 0.5rem;
+	font-size: 1.5rem;
+}
+.weather-panel .wind .speed .units {
+	font-size: 0.75rem;
+}

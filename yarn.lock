@@ -2505,7 +2505,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"rescript@npm:^10.0.1":
+"rescript@npm:^10.1.0":
   version: 10.1.0
   resolution: "rescript@npm:10.1.0"
   bin:
@@ -2891,7 +2891,7 @@ __metadata:
     process: ^0.11.10
     react: ^18.2.0
     react-dom: ^18.2.0
-    rescript: ^10.0.1
+    rescript: ^10.1.0
   languageName: unknown
   linkType: soft
 
