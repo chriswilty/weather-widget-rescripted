@@ -11,6 +11,7 @@
   },
   "reason": { "react-jsx": 3 },
   "suffix": ".bs.js",
+	"namespace": false,
   "bs-dependencies": [
     "@rescript/react"
   ],
