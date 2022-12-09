@@ -1,6 +1,6 @@
 type weather_icon = {
 	code: string,
-  description: string
+	description: string
 }
 
 type temperature = {
