@@ -1,13 +1,20 @@
 %%raw("import './WeatherWidget.css'")
 
-// TODO
-// Invoke service in a useEffect hook, store in a useState
-// Show Loading spinner until data arrives
+module Loading = {
+	@react.component
+	let make = () => {
+		<div className="loading" />
+	}
+}
+
 @react.component
 let make = () => {
-	let weatherData = MockData.weatherData
+	let weatherData = Hooks.useMockFetch(MockData.weatherData)
 
-	<div className="weather-widget">
-		<WeatherPanel data={weatherData} />
-	</div>
+	let content = switch weatherData {
+	| None => <Loading />
+	| Some(data) => <WeatherPanel data />
+	}
+
+	<div className="weather-widget">{content}</div>
 }
