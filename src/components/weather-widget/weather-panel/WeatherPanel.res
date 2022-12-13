@@ -48,7 +48,7 @@ module WeatherIcon = {
 	let make = (~icon: WeatherTypes.weather_icon) => {
 		let {code, description} = icon
 
-		<div className="icon">
+		<div role="img" ariaLabel={"weather: " ++ description} className="weather-icon">
 			<i title={description} className={"owf owf-5x owf-" ++ code} />
 		</div>
 	}
@@ -63,10 +63,16 @@ module Wind = {
 			~transform="rotate(" ++ normalisedDirection ++ "deg)",
 			(),
 		)
-		let windIconDescription = "Direction " ++ normalisedDirection ++ " degrees (North being 0)"
+		let windIconDescription = "Direction " ++ normalisedDirection ++ " degrees (Northerly being 0)"
 
 		<div role="region" ariaLabel="wind" className="wind">
-			<i title={windIconDescription} style={windIconStyle} className="icon" />
+			<i
+				role="img"
+				ariaLabel={windIconDescription}
+				title={windIconDescription}
+				style={windIconStyle}
+				className="icon"
+			/>
 			<div className="speed" title="wind speed">
 				{React.string(speed)}
 				<span className="units"> {React.string(" m/s")} </span>
