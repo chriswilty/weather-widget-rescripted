@@ -1,5 +1,5 @@
 %%raw("import '/src/styles/icons/owfont-regular.css'")
-%%raw("import './weather-panel.css'")
+%%raw("import './WeatherPanel.css'")
 
 module Dots = {
 	@react.component
