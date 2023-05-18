@@ -60,10 +60,9 @@ module Wind = {
 		let {fromDegrees, speed} = wind
 		let normalisedDirection = Js.Int.toString(mod(fromDegrees, 360))
 		let windIconStyle = ReactDOM.Style.make(
-			~transform="rotate(" ++ normalisedDirection ++ "deg)",
-			(),
+			~transform=`rotate(${normalisedDirection}deg)`, ()
 		)
-		let windIconDescription = "Direction " ++ normalisedDirection ++ " degrees (Northerly being 0)"
+		let windIconDescription = `Direction ${normalisedDirection} degrees (Northerly being 0)`
 
 		<div role="region" ariaLabel="wind" className="wind">
 			<i
@@ -83,22 +82,31 @@ module Wind = {
 
 @react.component
 let make = (~data: array<WeatherTypes.weather>) => {
-	let (currentIndex, setIndexRaw) = React.useState(_ => 0);
-	let incrementIndex = () => setIndexRaw(prev => mod(prev + 1, Js.Array2.length(data)))
-	let setIndex = index => setIndexRaw(_ => index)
+	let (currentIndex, setIndex) = React.useState(_ => 0);
+	let intervalId = React.useRef(None)
 
-	// TODO Use setInterval, store intervalId in useRef?
-	React.useEffect1(() => {
-		let timer = Js.Global.setTimeout(incrementIndex, 3000)
-		Some(() => Js.Global.clearTimeout(timer))
-	}, [currentIndex])
+	let incrementIndex = () => setIndex(prev => mod(prev + 1, Js.Array2.length(data)))
+	let startTicker = () => {
+		intervalId.current = Some(Js.Global.setInterval(incrementIndex, 3000))
+	}
+	let stopTicker = () => switch intervalId.current {
+		| Some(id) => Js.Global.clearInterval(id)
+		| None => ()
+	}
 
-	let {icon, location: name, temperature, wind} = data[currentIndex]
+	React.useEffect0(() => {
+		startTicker()
+		Some(stopTicker)
+	})
+
+	let { icon, location: name, temperature, wind } = data[currentIndex]
 	let locations = Js.Array2.map(data, weather => weather.location)
-	let setLocation = location =>
-		locations
-			-> Js.Array2.findIndex(loc => loc == location)
-			-> setIndex
+	let setLocation = location => {
+		stopTicker()
+		let newIndex = Js.Array2.findIndex(locations, loc => loc == location)
+		setIndex(_ => newIndex >= 0 ? newIndex : 0)
+		startTicker()
+	}
 
 	<div className="weather-panel">
 		<Location name />
