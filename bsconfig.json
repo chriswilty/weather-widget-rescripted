@@ -1,6 +1,6 @@
 {
   "name": "weather-widget-rescripted",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "sources": {
     "dir" : "src",
     "subdirs" : true
@@ -9,12 +9,10 @@
     "module": "es6",
     "in-source": true
   },
-  "reason": { "react-jsx": 3 },
+  "jsx": { "version": 4, "mode": "classic" },
   "suffix": ".bs.js",
-	"namespace": false,
-  "bs-dependencies": [
-    "@rescript/react"
-  ],
+  "namespace": false,
+  "bs-dependencies": ["@rescript/react"],
   "warnings": {
     "error" : "+101"
   }
