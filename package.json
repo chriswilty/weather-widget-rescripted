@@ -1,6 +1,6 @@
 {
   "name": "weather-widget-rescripted",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "source": "src/index.html",
   "scripts": {
     "start": "concurrently \"parcel\" \"rescript build -w\"",
@@ -13,15 +13,15 @@
   "author": "Chris Wilton-Magras",
   "license": "Unlicense",
   "dependencies": {
-    "@rescript/react": "^0.10.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
-    "concurrently": "^7.6.0",
-    "parcel": "^2.8.0",
+    "@rescript/react": "^0.11.0",
+    "concurrently": "^8.0.1",
+    "parcel": "^2.8.3",
     "process": "^0.11.10",
-    "rescript": "^10.1.0"
+    "rescript": "^10.1.4"
   },
   "packageManager": "yarn@3.3.0"
 }
