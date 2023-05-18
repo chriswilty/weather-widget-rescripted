@@ -1,7 +1,7 @@
 %%raw("import '/src/styles/icons/owfont-regular.css'")
 %%raw("import './WeatherPanel.css'")
 
-module Dots = {
+module Navigator = {
 	@react.component
 	let make = (~locations: array<string>, ~currentLocation: string, ~onSelected: string => unit) => {
 		let selectors = Js.Array2.map(locations, location =>
@@ -87,12 +87,13 @@ let make = (~data: array<WeatherTypes.weather>) => {
 	let incrementIndex = () => setIndexRaw(prev => mod(prev + 1, Js.Array2.length(data)))
 	let setIndex = index => setIndexRaw(_ => index)
 
+	// TODO Use setInterval, store intervalId in useRef?
 	React.useEffect1(() => {
 		let timer = Js.Global.setTimeout(incrementIndex, 3000)
 		Some(() => Js.Global.clearTimeout(timer))
 	}, [currentIndex])
 
-	let {icon, location, temperature, wind} = data[currentIndex]
+	let {icon, location: name, temperature, wind} = data[currentIndex]
 	let locations = Js.Array2.map(data, weather => weather.location)
 	let setLocation = location =>
 		locations
@@ -100,10 +101,10 @@ let make = (~data: array<WeatherTypes.weather>) => {
 			-> setIndex
 
 	<div className="weather-panel">
-		<Location name={location} />
+		<Location name />
 		<Wind wind />
 		<WeatherIcon icon />
 		<Temperature temperature />
-		<Dots locations currentLocation={location} onSelected={setLocation} />
+		<Navigator locations currentLocation={name} onSelected={setLocation} />
 	</div>
 }
