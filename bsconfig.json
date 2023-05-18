@@ -9,7 +9,7 @@
     "module": "es6",
     "in-source": true
   },
-  "jsx": { "version": 4, "mode": "classic" },
+  "jsx": { "version": 4, "mode": "automatic" },
   "suffix": ".bs.js",
   "namespace": false,
   "bs-dependencies": ["@rescript/react"],
